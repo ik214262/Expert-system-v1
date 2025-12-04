@@ -68,7 +68,7 @@ def delete_confirm(user_id: int):
     user = UserService.get_by_id(user_id)
     if user is None:
         abort(404)
-    form = ConfirmDeleteForm
+    form = ConfirmDeleteForm()
     return render_template("users/delete_confirm.html", user=user, form=form)
 
 
